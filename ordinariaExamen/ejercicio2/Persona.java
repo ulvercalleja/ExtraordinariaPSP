@@ -15,15 +15,15 @@ public class Persona extends Thread{
     @Override
     public void run() {
         while(true){
-            //entrar
+            bano.entrar(idPersona);
             simularUso();
-            //salir
+            bano.salir(idPersona);
         }
     }
     
     public void simularUso(){
         
-        System.out.printf("Persona %d esta usando el baño...", idPersona);
+        System.out.printf("Persona %d esta usando el baño... \n", idPersona);
         try {
             sleep((long) (Math.random()* (MAX_TIEMPO_DESCANSO - MIN_TIEMPO_DESCANSO + 1) + MIN_TIEMPO_DESCANSO));
         } catch (InterruptedException e) {
