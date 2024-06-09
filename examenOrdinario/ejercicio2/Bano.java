@@ -1,4 +1,4 @@
-package ordinariaExamen.ejercicio2;
+package examenOrdinario.ejercicio2;
 
 public class Bano {
 

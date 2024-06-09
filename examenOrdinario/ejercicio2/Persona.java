@@ -1,4 +1,4 @@
-package ordinariaExamen.ejercicio2;
+package examenOrdinario.ejercicio2;
 
 public class Persona extends Thread{
     private static final long MIN_TIEMPO_DESCANSO = 10000;

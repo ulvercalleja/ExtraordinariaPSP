@@ -1,3 +1,18 @@
+/* La letra de un DNI es un carácter de control de errores, puede ser calculado con
+el número de DNI, la operación módulo y el siguiente array.
+String[] letras = {"T", "R", "W", "A", "G", "M", "Y", "F", "P", "D",
+"X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"};
+Por ejemplo 00000046 daría la ‘T’.
+Por ejemplo 00000047 daría la ‘R’.
+printf("%08d", dni); // Para pintar ceros a la izquierda.
+Crea un programa en C que reciba por parámetro una letra de DNI y un número.
+El programa escribirá todos los DNIs con esa letra utilizando n procesos. Siendo n
+el segundo número pasado por parámetro. Además cuando un DNI sea un número
+primo escribirá un asterisco al lado del DNI
+El programa principal esperará a sus hijos.
+Pista: La mejor forma de distribuir el trabajo es con el módulo y el
+número de proceso dentro del bucle.
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
