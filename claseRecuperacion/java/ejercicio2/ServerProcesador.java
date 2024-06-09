@@ -22,7 +22,7 @@ public class ServerProcesador {
                 // Extraer el mensaje
                 String message = new String(recibirPaquete.getData(), 0, recibirPaquete.getLength());
                 System.out.println(message);
-
+                
                 FileWriter escritor = new FileWriter(RUTA_ARCHIVO, true);
                 escritor.write(message + "\n");
                 escritor.close();

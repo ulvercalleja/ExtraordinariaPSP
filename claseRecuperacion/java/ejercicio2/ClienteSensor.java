@@ -9,8 +9,11 @@ import java.util.Date;
 public class ClienteSensor {
     private static final String SERVER_ADDRESS = "10.0.2.15";
     private static final int SERVER_PORT = 9876;
-    private static final int SENSOR_ID = 1; // Cambia este valor para cada sensor
+    private static int sensor_id; 
 
+    public ClienteSensor (int sensor_id){
+        this.sensor_id = sensor_id;
+    }
     public static void main(String[] args) {
         try {
             DatagramSocket socket = new DatagramSocket();
@@ -23,7 +26,7 @@ public class ClienteSensor {
                 // Obtener la hora actual
                 String horaActual = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
                 
-                String mensaje = "SensorID:" + SENSOR_ID + " Distancia:" + distancia + " Hora:" + horaActual;
+                String mensaje = "SensorID:" + sensor_id + " Distancia:" + distancia + " Hora:" + horaActual;
 
                 byte[] buffer = mensaje.getBytes(); 
                 DatagramPacket paquete = new DatagramPacket(buffer, buffer.length, ipAddress, SERVER_PORT);

@@ -4,7 +4,7 @@ import java.util.List;
 public class CarritoCompras {
 
     private final List<Productos> productos;
-    private int  capacidadMaxima;
+    private int capacidadMaxima;
 
     public CarritoCompras(int capacidadMaxima) {
         this.capacidadMaxima = capacidadMaxima;
@@ -25,18 +25,24 @@ public class CarritoCompras {
         }
     }
 
-    public synchronized void eliminarProducto (Productos producto){
+    public synchronized void eliminarProducto (){
         try {
             while (productos.isEmpty()) {
                 wait();
             }
 
-            productos.remove(producto);
-            System.out.println("Producto eliminado: " + producto.getNombre());
+            productos.remove(productos.size() - 1);
+            System.out.println("Producto eliminado: " + Thread.currentThread().getName());
             notifyAll();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    
+
+    public List<Productos> getProductos() {
+        return productos;
     }
 
     public synchronized int getTamano() {

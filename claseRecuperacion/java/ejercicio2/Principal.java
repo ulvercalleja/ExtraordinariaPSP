@@ -13,5 +13,9 @@ el identificador del sensor y la hora.*/
 package claseRecuperacion.java.ejercicio2;
 
 public class Principal {
-    
+    ClienteSensor sensor1 = new ClienteSensor(1);
+    ClienteSensor sensor2 = new ClienteSensor(2);
+    ClienteSensor sensor3 = new ClienteSensor(3);
+    ClienteSensor sensor4 = new ClienteSensor(4);
+    ClienteSensor sensor5 = new ClienteSensor(5);
 }

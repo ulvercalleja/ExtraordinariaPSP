@@ -25,7 +25,7 @@ public class Principal {
     Thread[] usuarios = new Thread[5];
 
     for (int i = 0; i < usuarios.length; i++) {
-      usuarios[i] = new Thread(new Usuario(carro));
+      usuarios[i] = new Thread(new Usuario(carro), "Usuario-" + (i+1));
       usuarios[i].start();
     }
 
